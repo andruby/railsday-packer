@@ -3,7 +3,7 @@
   "builders": [
     {
       "type": "virtualbox-ovf",
-      "source_path": "railsday-ubuntu1404.ova",
+      "source_path": "ubuntu1404-base.ova",
       "guest_additions_path": "VBoxGuestAdditions.iso",
       "ssh_username": "railsday",
       "ssh_password": "railsday",
@@ -18,7 +18,7 @@
         "scripts/ruby.sh",
         "scripts/extra_software.sh",
         "scripts/guest_additions.sh",
-        "scripts/cleanup.sh",
+        "scripts/cleanup.sh"
       ],
       "execute_command": "echo 'railsday' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     }

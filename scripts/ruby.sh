@@ -9,6 +9,7 @@ sudo apt-get install -y nodejs
 
 # Libraries needed for typical ruby gems
 sudo apt-get install -y libsqlite3-dev
+sudo apt-get install -y libpq-dev # for pg gem for heroku
 
 # Install ruby gems for the RailsDay
 sudo gem install bundler
