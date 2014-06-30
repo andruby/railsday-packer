@@ -5,3 +5,6 @@ sudo apt-get install -y ruby2.1 ruby2.1-dev
 
 # Libraries needed for typical ruby gems
 sudo apt-get install libsqlite3-dev
+
+sudo gem install bundler
+sudo gem install rails
