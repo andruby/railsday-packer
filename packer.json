@@ -14,17 +14,12 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "scripts/ruby.sh",
-      "execute_command": "echo 'railsday' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    },
-    {
-      "type": "shell",
-      "script": "scripts/extra_software.sh",
-      "execute_command": "echo 'railsday' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    },
-    {
-      "type": "shell",
-      "script": "scripts/guest_additions.sh",
+      "scripts": [
+        "scripts/ruby.sh",
+        "scripts/extra_software.sh",
+        "scripts/guest_additions.sh",
+        "scripts/cleanup.sh",
+      ],
       "execute_command": "echo 'railsday' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     }
   ]
