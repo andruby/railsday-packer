@@ -4,6 +4,7 @@
     {
       "type": "virtualbox-ovf",
       "source_path": "railsday-ubuntu1404.ova",
+      "guest_additions_path": "VBoxGuestAdditions.iso",
       "ssh_username": "railsday",
       "ssh_password": "railsday",
       "ssh_wait_timeout": "30s",
@@ -13,7 +14,17 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "setup.sh",
+      "script": "scripts/ruby.sh",
+      "execute_command": "echo 'railsday' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/extra_software.sh",
+      "execute_command": "echo 'railsday' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/guest_additions.sh",
       "execute_command": "echo 'railsday' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     }
   ]
